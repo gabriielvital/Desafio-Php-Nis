@@ -95,17 +95,13 @@ $('#btnModalCadMembro').click(function () {
 function editarMembro(id) {
     var idMembro = $('#rowEditarMembro_' + (id - 1)).attr("data-id");
     var nomeMembro = $('#rowEditarMembro_' + (id - 1)).attr("data-nome");
-    var cpf = $('#rowEditarMembro_' + (id - 1)).attr("data-cpf");
-    var usuario = $('#rowEditarMembro_' + (id - 1)).attr("data-usuario");
-    var senha = $('#rowEditarMembro_' + (id - 1)).attr("data-senha");
+    var nis = $('#rowEditarMembro_' + (id - 1)).attr("data-nis");
 
 
     $('#editarMembro').modal('show');
     $('.modal .modal-dialog .modal-content .modal-header #nome-membro').text("Editar o membro " + nomeMembro);
     $('.modal .modal-dialog .modal-content .modal-body #nome').val(nomeMembro);
-    $('.modal .modal-dialog .modal-content .modal-body #cpf').val(cpf);
-    $('.modal .modal-dialog .modal-content .modal-body #usuario').val(usuario);
-    $('.modal .modal-dialog .modal-content .modal-body #senha').val(senha);
+    $('.modal .modal-dialog .modal-content .modal-body #nis').val(nis);
     $('.modal .modal-dialog .modal-content .modal-body #id').val(idMembro);
 
 
