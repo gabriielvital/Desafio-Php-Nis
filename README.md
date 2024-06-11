@@ -1,5 +1,6 @@
-<p>
+
   ## Goals 
+<p>
   <br> [ ]Injeção de Dependencias
   <br> [ ]Padrão Validate
   <br> [ ]Padrão Interfaces
