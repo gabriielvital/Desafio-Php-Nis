@@ -68,7 +68,7 @@ class DaoMembro {
             //bind nos valores dos campos
             $stmt->bindparam(1, $nome);
             $stmt->bindparam(2, $nis);
-            $stmt->bindparam(5, $id);
+            $stmt->bindparam(3, $id);
 
             //executo a instrução
             $stmt->execute();
