@@ -11,7 +11,7 @@ require_once('../database/Database.php');
 /**
  * Description of DaoMembro
  *
- * @author Thiago
+ *
  */
 class DaoMembro {
 
@@ -32,18 +32,14 @@ class DaoMembro {
         try {
             //recupero valores do Model
             $nome = $Membro->getNome();
-            $cpf = $Membro->getCpf();
-            $usuario = $Membro->getUsuario();
-            $senha = $Membro->getSenha();
+            $nis = $Membro->getNis();
 
             //preparo o comando
-            $stmt = $this->conn->prepare("INSERT INTO Membro(nomeMembro, cpfMembro, usuarioMembro, senhaMembro) VALUES(?, ?, ?, ?)");
+            $stmt = $this->conn->prepare("INSERT INTO Membro(nomeMembro, nisMembro) VALUES(?, ?)");
 
             //bind nos valores dos campos
             $stmt->bindparam(1, $nome);
-            $stmt->bindparam(2, $cpf);
-            $stmt->bindparam(3, $usuario);
-            $stmt->bindparam(4, $senha);
+            $stmt->bindparam(2, $nis);
 
             //executo a instrução
             $stmt->execute();
@@ -64,12 +60,10 @@ class DaoMembro {
             //recupero valores do Model
             $id = $Membro->getId();
             $nome = $Membro->getNome();
-            $cpf = $Membro->getCpf();
-            $usuario = $Membro->getUsuario();
-            $senha = $Membro->getSenha();
+            $nis = $Membro->getNis();
 
             //preparo o comando
-            $stmt = $this->conn->prepare("UPDATE Membro SET nomeMembro = ?, cpfMembro = ?, usuarioMembro = ?, senhaMembro = ? WHERE idMembro = ?");
+            $stmt = $this->conn->prepare("UPDATE Membro SET nomeMembro = ?, nisMembro = ? WHERE idMembro = ?");
 
             //bind nos valores dos campos
             $stmt->bindparam(1, $nome);

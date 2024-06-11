@@ -25,16 +25,8 @@ class ModelMembro {
         return $this->nome;
     }
 
-    function getCpf() {
-        return $this->cpf;
-    }
-
-    function getUsuario() {
-        return $this->usuario;
-    }
-
-    function getSenha() {
-        return $this->senha;
+    function getNis() {
+        return $this->nis;
     }
 
     function setId($id) {
