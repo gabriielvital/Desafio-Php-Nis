@@ -9,15 +9,13 @@
 /**
  * Description of ModelMembro
  *
- * @author Thiago
+ *
  */
 class ModelMembro {
 
     private $id;
     private $nome;
-    private $cpf;
-    private $usuario;
-    private $senha;
+    private $nis;
 
     function getId() {
         return $this->id;
@@ -47,16 +45,8 @@ class ModelMembro {
         $this->nome = $nome;
     }
 
-    function setCpf($cpf) {
-        $this->cpf = $cpf;
-    }
-
-    function setUsuario($usuario) {
-        $this->usuario = $usuario;
-    }
-
-    function setSenha($senha) {
-        $this->senha = $senha;
+    function setNis($nis) {
+        $this->nis = $nis;
     }
 
 }

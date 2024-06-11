@@ -9,12 +9,12 @@
 /**
  * Description of Database
  *
- * @author Thiago
+ * 
  */
 class Database {
 
     private $host = "127.0.0.1";
-    private $db_name = "projeto_trainee";
+    private $db_name = "projeto_nis";
     private $username = "root";
     private $password = "";
     public $conn;
