@@ -8,24 +8,22 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema projeto_trainee
+-- Schema projeto_nis
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema projeto_trainee
+-- Schema projeto_nis
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `projeto_trainee` DEFAULT CHARACTER SET utf8 ;
-USE `projeto_trainee` ;
+CREATE SCHEMA IF NOT EXISTS `projeto_nis` DEFAULT CHARACTER SET utf8 ;
+USE `projeto_nis` ;
 
 -- -----------------------------------------------------
--- Table `projeto_trainee`.`Membro`
+-- Table `projeto_nis`.`Membro`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `projeto_trainee`.`Membro` (
+CREATE TABLE IF NOT EXISTS `projeto_nis`.`Membro` (
   `idMembro` INT NOT NULL AUTO_INCREMENT,
   `nomeMembro` VARCHAR(45) NOT NULL,
-  `cpfMembro` VARCHAR(45) NOT NULL,
-  `usuarioUsuario` VARCHAR(45) NOT NULL,
-  `senhaMembro` VARCHAR(45) NOT NULL,
+  `nisMembro` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idMembro`))
 ENGINE = InnoDB;
 
