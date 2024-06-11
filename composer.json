@@ -1,0 +1,17 @@
+{
+    "name": "gabri/desafio-php-nis",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Gabri\\DesafioPhpNis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}

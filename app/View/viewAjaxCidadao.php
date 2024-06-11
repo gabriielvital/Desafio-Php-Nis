@@ -1,7 +1,7 @@
 <?php
 
-require_once ('../Dao/DaoMembro.php');
-$membrosDao = new DaoMembro();
+require_once ('../Dao/DaoCidadao.php');
+$CidadaosDao = new DaoCidadao();
 
 function mask($val, $mask) {
 
@@ -25,22 +25,22 @@ function mask($val, $mask) {
 
 $encoding = 'UTF-8';
 
-// Select na tabela membros...
-$stmtMembros = $membrosDao->runQuery("SELECT * FROM Membro");
-$stmtMembros->execute();
+// Select na tabela Cidadaos...
+$stmtCidadaos = $CidadaosDao->runQuery("SELECT * FROM Cidadao");
+$stmtCidadaos->execute();
 
 $data = array();
 
 $i = 0;
 // Mostrar tabela...
-while ($rowMembros = $stmtMembros->fetch(PDO::FETCH_ASSOC)) {
+while ($rowCidadaos = $stmtCidadaos->fetch(PDO::FETCH_ASSOC)) {
 
-    $data[$i]{'idMembro'} = $rowMembros['idMembro'];
-    $data[$i]{'nomeMembro'} = $rowMembros['nomeMembro'];
-    $data[$i]{'nisMembro'} = $rowMembros['nisMembro'];
+    $data[$i]{'idCidadao'} = $rowCidadaos['idCidadao'];
+    $data[$i]{'nomeCidadao'} = $rowCidadaos['nomeCidadao'];
+    $data[$i]{'nisCidadao'} = $rowCidadaos['nisCidadao'];
     $data[$i]{'button'} = '
-              <a id="rowEditarMembro_' . $i . '" data-id="' . $rowMembros['idMembro'] . '" data-nome="' . $rowMembros['nomeMembro'] . '"data-nis="' . $rowMembros['nisMembro'] . '" onclick="editarMembro(' . ($i + 1) . ')" data-tooltip="tooltip" title="Editar Membro"><span class="mdi mdi-account-key"></span> Editar</a></li>
-              <a id="rowDeleteMembro_' . $i . '" data-id="' . $rowMembros['idMembro'] . '" data-nome="' . $rowMembros['nomeMembro'] . '" onclick="excluirMembro(' . ($i + 1) . ')" data-tooltip="tooltip" title="Excluir"><span class="mdi mdi-delete-forever"></span> Excluir</a></li>
+              <a id="rowEditarCidadao_' . $i . '" data-id="' . $rowCidadaos['idCidadao'] . '" data-nome="' . $rowCidadaos['nomeCidadao'] . '"data-nis="' . $rowCidadaos['nisCidadao'] . '" onclick="editarCidadao(' . ($i + 1) . ')" data-tooltip="tooltip" title="Editar Cidadao"><span class="mdi mdi-account-key"></span> Editar</a></li>
+              <a id="rowDeleteCidadao_' . $i . '" data-id="' . $rowCidadaos['idCidadao'] . '" data-nome="' . $rowCidadaos['nomeCidadao'] . '" onclick="excluirCidadao(' . ($i + 1) . ')" data-tooltip="tooltip" title="Excluir"><span class="mdi mdi-delete-forever"></span> Excluir</a></li>
            ';
 
     $i++;

@@ -7,7 +7,7 @@
  */
 
 /**
- * Description of ControllerMembro
+ * Description of ControllerCidadao
  *
  *
  */
@@ -16,81 +16,81 @@ $acao = $_POST["acao"];
 
 switch ($acao) {
     case 'adicionar':
-        adicionarMembro();
+        adicionarCidadao();
         break;
     case 'editar':
-        editarMembro();
+        editarCidadao();
         break;
     case 'excluir':
-        excluirMembro();
+        excluirCidadao();
         break;
 }
 
-function adicionarMembro() {
+function adicionarCidadao() {
     //inclui o modelo, a dao e a database
-    require_once ('../Model/ModelMembro.php');
-    require_once ('../Dao/DaoMembro.php');
+    require_once ('../Model/ModelCidadao.php');
+    require_once ('../Dao/DaoCidadao.php');
     require_once('../Database/Database.php');
 
     //instancia das classes
     $db = new Database();
-    $dao = new DaoMembro();
-    $membro = new ModelMembro();
+    $dao = new DaoCidadao();
+    $Cidadao = new ModelCidadao();
 
     //campos a serem recebidos da view
     $nome = $_POST['nome'];
     $nis = $_POST['nis'];
 
-    //adiciono os elementos em um objeto Membro
-    $membro->setNome($nome);
-    $membro->setNis($nis);
+    //adiciono os elementos em um objeto Cidadao
+    $Cidadao->setNome($nome);
+    $Cidadao->setNis($nis);
 
     //chamo a função da DAO, que efetivamente manipula o BD
-    $dao->adicionarMembro($membro);
+    $dao->adicionarCidadao($Cidadao);
 }
 
-function editarMembro() {
+function editarCidadao() {
     //inclui o modelo, a dao e a database
-    require_once ('../Model/ModelMembro.php');
-    require_once ('../Dao/DaoMembro.php');
+    require_once ('../Model/ModelCidadao.php');
+    require_once ('../Dao/DaoCidadao.php');
     require_once('../Database/Database.php');
 
     //instancia das classes
     $db = new Database();
-    $dao = new DaoMembro();
-    $membro = new ModelMembro();
+    $dao = new DaoCidadao();
+    $Cidadao = new ModelCidadao();
 
     //campos a serem recebidos da view
     $id = $_POST['id'];
     $nome = $_POST['nome'];
     $nis = $_POST['nis'];
 
-    //adiciono os elementos em um objeto Membro
-    $membro->setId($id);
-    $membro->setNome($nome);
-    $membro->setNis($nis);
+    //adiciono os elementos em um objeto Cidadao
+    $Cidadao->setId($id);
+    $Cidadao->setNome($nome);
+    $Cidadao->setNis($nis);
 
     //chamo a função da DAO, que efetivamente manipula o BD
-    $dao->editarMembro($membro);
+    $dao->editarCidadao($Cidadao);
 }
 
-function excluirMembro() {
+function excluirCidadao() {
     //inclui o modelo, a dao e a database
-    require_once ('../Model/ModelMembro.php');
-    require_once ('../Dao/DaoMembro.php');
+    require_once ('../Model/ModelCidadao.php');
+    require_once ('../Dao/DaoCidadao.php');
     require_once('../Database/Database.php');
 
     //instancia das classes
     $db = new Database();
-    $dao = new DaoMembro();
-    $membro = new ModelMembro();
+    $dao = new DaoCidadao();
+    $Cidadao = new ModelCidadao();
 
     //id do usuário a ser deletado
     $id = $_POST['id'];
 
-    $membro = new ModelMembro();
-    $membro->setId($id);
+    $Cidadao = new ModelCidadao();
+    $Cidadao->setId($id);
     
     //chamo a função da DAO, que efetivamente manipula o BD
-    $dao->excluirMembro($membro);
+    $dao->excluirCidadao($Cidadao);
 }

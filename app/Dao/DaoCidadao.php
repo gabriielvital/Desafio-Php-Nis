@@ -9,11 +9,11 @@ require_once('../database/Database.php');
  */
 
 /**
- * Description of DaoMembro
+ * Description of DaoCidadao
  *
  *
  */
-class DaoMembro {
+class DaoCidadao {
 
     private $conn;
 
@@ -28,14 +28,14 @@ class DaoMembro {
         return $stmt;
     }
 
-    public function adicionarMembro(ModelMembro $Membro) {
+    public function adicionarCidadao(ModelCidadao $Cidadao) {
         try {
             //recupero valores do Model
-            $nome = $Membro->getNome();
-            $nis = $Membro->getNis();
+            $nome = $Cidadao->getNome();
+            $nis = $Cidadao->getNis();
 
             //preparo o comando
-            $stmt = $this->conn->prepare("INSERT INTO Membro(nomeMembro, nisMembro) VALUES(?, ?)");
+            $stmt = $this->conn->prepare("INSERT INTO Cidadao(nomeCidadao, nisCidadao) VALUES(?, ?)");
 
             //bind nos valores dos campos
             $stmt->bindparam(1, $nome);
@@ -55,15 +55,15 @@ class DaoMembro {
         }
     }
 
-    public function editarMembro(ModelMembro $Membro) {
+    public function editarCidadao(ModelCidadao $Cidadao) {
         try {
             //recupero valores do Model
-            $id = $Membro->getId();
-            $nome = $Membro->getNome();
-            $nis = $Membro->getNis();
+            $id = $Cidadao->getId();
+            $nome = $Cidadao->getNome();
+            $nis = $Cidadao->getNis();
 
             //preparo o comando
-            $stmt = $this->conn->prepare("UPDATE Membro SET nomeMembro = ?, nisMembro = ? WHERE idMembro = ?");
+            $stmt = $this->conn->prepare("UPDATE Cidadao SET nomeCidadao = ?, nisCidadao = ? WHERE idCidadao = ?");
 
             //bind nos valores dos campos
             $stmt->bindparam(1, $nome);
@@ -84,13 +84,13 @@ class DaoMembro {
         }
     }
 
-    public function excluirMembro(ModelMembro $Membro) {
+    public function excluirCidadao(ModelCidadao $Cidadao) {
         try {
             //recupero valores do Model
-            $id = $Membro->getId();
+            $id = $Cidadao->getId();
 
             //preparo o comando
-            $stmt = $this->conn->prepare("DELETE FROM Membro WHERE idMembro = ?");
+            $stmt = $this->conn->prepare("DELETE FROM Cidadao WHERE idCidadao = ?");
 
             //bind nos valores dos campos
             $stmt->bindparam(1, $id);

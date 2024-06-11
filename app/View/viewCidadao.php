@@ -13,7 +13,7 @@
 
         <div class="row">
             <div class="col">
-                <button id="btnModalCadMembro" class="btn btn-primary" type="submit">Novo membro</button>
+                <button id="btnModalCadCidadao" class="btn btn-primary" type="submit">Novo Cidadao</button>
             </div>
         </div>
         <div class="row">
@@ -41,16 +41,16 @@
 
 
             <!-- -->
-            <div id="cadastrarMembro" class="modal fade" role="dialog">
+            <div id="cadastrarCidadao" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="nome-membro"></h4>
+                            <h4 class="modal-title" id="nome-Cidadao"></h4>
                             <button type="button" class="close" data-dismiss="modal" >&times;</button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal" id="cadMembro-form" method="POST">
+                            <form class="form-horizontal" id="cadCidadao-form" method="POST">
                                 <input type="hidden" name="acao" value="adicionar">
                                 <div class="row">
                                     <div class="col-md-12 col-md-offset-1">
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button id="btnCadMembro" class="btn btn-primary" type="submit">Editar</button>
+                                    <button id="btnCadCidadao" class="btn btn-primary" type="submit">Editar</button>
                                 </div>
                             </form>
                         </div>
@@ -83,16 +83,16 @@
             </div>
             
             <!-- -->
-            <div id="editarMembro" class="modal fade" role="dialog">
+            <div id="editarCidadao" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="nome-membro"></h4>
+                            <h4 class="modal-title" id="nome-Cidadao"></h4>
                             <button type="button" class="close" data-dismiss="modal" >&times;</button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal" id="edMembro-form" method="POST">
+                            <form class="form-horizontal" id="edCidadao-form" method="POST">
                                 <input type="hidden" name="id" id="id">
                                 <input type="hidden" name="acao" value="editar">
                                 <div class="row">
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button id="btnEditarMembro" class="btn btn-primary" type="submit">Editar</button>
+                                    <button id="btnEditarCidadao" class="btn btn-primary" type="submit">Editar</button>
                                 </div>
                             </form>
                         </div>
@@ -130,7 +130,7 @@
             <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>        <!-- Bootstrap core JavaScript -->
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
             <!-- Custom js -->
-            <script src="../assets/js/custom/membros.js"></script>
+            <script src="../assets/js/custom/Cidadaos.js"></script>
             <!-- Sweet alert js -->
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
             <!-- bibliotecas do dtable -->
@@ -149,12 +149,12 @@
                             }
                         ],
                         "ajax": {
-                            "url": "viewAjaxMembro.php",
+                            "url": "viewAjaxCidadao.php",
                             "type": "POST"
                         },
                         "columns": [
-                            {"data": "nomeMembro"},
-                            {"data": "nisMembro"},
+                            {"data": "nomeCidadao"},
+                            {"data": "nisCidadao"},
                             {"data": "button"}
                         ],
                         "order": [[0, 'asc']],

@@ -1,9 +1,9 @@
-function excluirMembro(id) {
-    var codMembro = $('#rowDeleteMembro_' + (id - 1)).attr("data-id");
-    var nomeMembro = $('#rowDeleteMembro_' + (id - 1)).attr("data-nome");
+function excluirCidadao(id) {
+    var codCidadao = $('#rowDeleteCidadao_' + (id - 1)).attr("data-id");
+    var nomeCidadao = $('#rowDeleteCidadao_' + (id - 1)).attr("data-nome");
     Swal.fire({
         title: 'Confirma?',
-        text: "Deseja realmente excluir o usuário " + nomeMembro + " de id: " + codMembro + " ?",
+        text: "Deseja realmente excluir o usuário " + nomeCidadao + " de id: " + codCidadao + " ?",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -12,10 +12,10 @@ function excluirMembro(id) {
         preConfirm: function () {
             $.ajax({
                 type: "POST",
-                url: "../controller/ControllerMembro.php",
+                url: "../controller/ControllerCidadao.php",
                 data: {
                     acao: "excluir",
-                    id: codMembro
+                    id: codCidadao
                 },
                 success: function (result) {
                     if (result == 1) {
@@ -35,17 +35,17 @@ function excluirMembro(id) {
 
 // Função para editar Usuarios
 $(document).ready(function () {
-    $('#btnEditarMembro').click(function () {
+    $('#btnEditarCidadao').click(function () {
 
-        var dados = $('#edMembro-form').serializeArray();
+        var dados = $('#edCidadao-form').serializeArray();
         $.ajax({
             type: "POST",
-            url: "../controller/ControllerMembro.php",
+            url: "../controller/ControllerCidadao.php",
             data: dados,
             success: function (result) {
                 if (result == 1) {
                     Swal.fire("editado com sucesso");
-                    $('#editarMembro').modal('hide');
+                    $('#editarCidadao').modal('hide');
                     var table = $('#sampleTable').DataTable();
                     table.ajax.reload(null, false);
 
@@ -62,19 +62,19 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    $('#btnCadMembro').click(function () {
-        var dados = $('#cadMembro-form').serializeArray();
+    $('#btnCadCidadao').click(function () {
+        var dados = $('#cadCidadao-form').serializeArray();
         $.ajax({
             type: "POST",
-            url: "../controller/ControllerMembro.php",
+            url: "../controller/ControllerCidadao.php",
             data: dados,
             success: function (result) {
                 if (result == 1) {
                     Swal.fire("cadastrado com sucesso");
-                    $('#cadastrarMembro').modal('hide');
+                    $('#cadastrarCidadao').modal('hide');
                     var table = $('#sampleTable').DataTable();
                     table.ajax.reload(null, false);
-                    $("#cadMembro-form").trigger('reset');
+                    $("#cadCidadao-form").trigger('reset');
                 } else {
                     Swal.fire("Algo deu errado!");
                 }
@@ -86,26 +86,26 @@ $(document).ready(function () {
 
 
 
-$('#btnModalCadMembro').click(function () {
+$('#btnModalCadCidadao').click(function () {
 
-    $('#cadastrarMembro').modal('show');
+    $('#cadastrarCidadao').modal('show');
 });
 
 
-function editarMembro(id) {
-    var idMembro = $('#rowEditarMembro_' + (id - 1)).attr("data-id");
-    var nomeMembro = $('#rowEditarMembro_' + (id - 1)).attr("data-nome");
-    var nis = $('#rowEditarMembro_' + (id - 1)).attr("data-nis");
+function editarCidadao(id) {
+    var idCidadao = $('#rowEditarCidadao_' + (id - 1)).attr("data-id");
+    var nomeCidadao = $('#rowEditarCidadao_' + (id - 1)).attr("data-nome");
+    var nis = $('#rowEditarCidadao_' + (id - 1)).attr("data-nis");
 
 
-    $('#editarMembro').modal('show');
-    $('.modal .modal-dialog .modal-content .modal-header #nome-membro').text("Editar o membro " + nomeMembro);
-    $('.modal .modal-dialog .modal-content .modal-body #nome').val(nomeMembro);
+    $('#editarCidadao').modal('show');
+    $('.modal .modal-dialog .modal-content .modal-header #nome-Cidadao').text("Editar o Cidadao " + nomeCidadao);
+    $('.modal .modal-dialog .modal-content .modal-body #nome').val(nomeCidadao);
     $('.modal .modal-dialog .modal-content .modal-body #nis').val(nis);
-    $('.modal .modal-dialog .modal-content .modal-body #id').val(idMembro);
+    $('.modal .modal-dialog .modal-content .modal-body #id').val(idCidadao);
 
 
-    // $('.modal .modal-dialog .modal-content .modal-body #nomeMembro').val(nomeMembro);
+    // $('.modal .modal-dialog .modal-content .modal-body #nomeCidadao').val(nomeCidadao);
 
 }
 

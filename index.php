@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        header("location: view/viewMembro.php");
+        header("location: view/viewCidadao.php");
         ?>
     </body>
 </html>

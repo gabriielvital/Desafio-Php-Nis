@@ -18,13 +18,13 @@ CREATE SCHEMA IF NOT EXISTS `projeto_nis` DEFAULT CHARACTER SET utf8 ;
 USE `projeto_nis` ;
 
 -- -----------------------------------------------------
--- Table `projeto_nis`.`Membro`
+-- Table `projeto_nis`.`Cidadao`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `projeto_nis`.`Membro` (
-  `idMembro` INT NOT NULL AUTO_INCREMENT,
-  `nomeMembro` VARCHAR(45) NOT NULL,
-  `nisMembro` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idMembro`))
+CREATE TABLE IF NOT EXISTS `projeto_nis`.`Cidadao` (
+  `idCidadao` INT NOT NULL AUTO_INCREMENT,
+  `nomeCidadao` VARCHAR(45) NOT NULL,
+  `nisCidadao` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idCidadao`))
 ENGINE = InnoDB;
 
 
