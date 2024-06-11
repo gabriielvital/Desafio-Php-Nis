@@ -81,49 +81,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- -->
-            <div id="editarCidadao" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="nome-Cidadao"></h4>
-                            <button type="button" class="close" data-dismiss="modal" >&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal" id="edCidadao-form" method="POST">
-                                <input type="hidden" name="id" id="id">
-                                <input type="hidden" name="acao" value="editar">
-                                <div class="row">
-                                    <div class="col-md-12 col-md-offset-1">
-                                        <div class="form-group">
-                                            <label class="col-lg-12 control-label">Nome</label>
-                                            <div class="col-lg-12">
-                                                <input class="form-control" type="text" id="nome" name="nome" placeholder="" required autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-md-offset-1">
-                                        <div class="form-group">
-                                            <label class="col-lg-12 control-label">NIS</label>
-                                            <div class="col-lg-12">
-                                                <input class="form-control" type="text" id="nis" name="nis" placeholder="" required autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button id="btnEditarCidadao" class="btn btn-primary" type="submit">Editar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
             <!-- JQuery -->
@@ -145,7 +102,7 @@
                     $('#sampleTable').DataTable({
                         "columnDefs": [
                             {
-                                targets: [0, 1, 2]
+                                targets: [0, 1]
                             }
                         ],
                         "ajax": {
@@ -154,8 +111,7 @@
                         },
                         "columns": [
                             {"data": "nomeCidadao"},
-                            {"data": "nisCidadao"},
-                            {"data": "button"}
+                            {"data": "nisCidadao"}
                         ],
                         "order": [[0, 'asc']],
                         "oPaginate": {
@@ -171,7 +127,7 @@
                             "info": "Mostrando a página _PAGE_ de _PAGES_",
                             "infoEmpty": "Sem registros disponíveis",
                             "infoFiltered": "(filtered from _MAX_ total records)",
-                            "search": "Pesquisar registros"
+                            "search": "Pesquisar cidadao por NIS"
                         },
                         "oPaginate": {
                             "sPrevious": "Prev",

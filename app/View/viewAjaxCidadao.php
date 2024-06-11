@@ -1,7 +1,7 @@
 <?php
 
 require_once ('../Dao/DaoCidadao.php');
-$CidadaosDao = new DaoCidadao();
+$cidadaosDao = new DaoCidadao();
 
 function mask($val, $mask) {
 
@@ -26,7 +26,7 @@ function mask($val, $mask) {
 $encoding = 'UTF-8';
 
 // Select na tabela Cidadaos...
-$stmtCidadaos = $CidadaosDao->runQuery("SELECT * FROM Cidadao");
+$stmtCidadaos = $cidadaosDao->runQuery("SELECT * FROM Cidadao");
 $stmtCidadaos->execute();
 
 $data = array();
@@ -38,11 +38,6 @@ while ($rowCidadaos = $stmtCidadaos->fetch(PDO::FETCH_ASSOC)) {
     $data[$i]{'idCidadao'} = $rowCidadaos['idCidadao'];
     $data[$i]{'nomeCidadao'} = $rowCidadaos['nomeCidadao'];
     $data[$i]{'nisCidadao'} = $rowCidadaos['nisCidadao'];
-    $data[$i]{'button'} = '
-              <a id="rowEditarCidadao_' . $i . '" data-id="' . $rowCidadaos['idCidadao'] . '" data-nome="' . $rowCidadaos['nomeCidadao'] . '"data-nis="' . $rowCidadaos['nisCidadao'] . '" onclick="editarCidadao(' . ($i + 1) . ')" data-tooltip="tooltip" title="Editar Cidadao"><span class="mdi mdi-account-key"></span> Editar</a></li>
-              <a id="rowDeleteCidadao_' . $i . '" data-id="' . $rowCidadaos['idCidadao'] . '" data-nome="' . $rowCidadaos['nomeCidadao'] . '" onclick="excluirCidadao(' . ($i + 1) . ')" data-tooltip="tooltip" title="Excluir"><span class="mdi mdi-delete-forever"></span> Excluir</a></li>
-           ';
-
     $i++;
 }
 

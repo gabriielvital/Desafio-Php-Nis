@@ -35,18 +35,18 @@ function adicionarCidadao() {
     //instancia das classes
     $db = new Database();
     $dao = new DaoCidadao();
-    $Cidadao = new ModelCidadao();
+    $cidadao = new ModelCidadao();
 
     //campos a serem recebidos da view
     $nome = $_POST['nome'];
     $nis = $_POST['nis'];
 
     //adiciono os elementos em um objeto Cidadao
-    $Cidadao->setNome($nome);
-    $Cidadao->setNis($nis);
+    $cidadao->setNome($nome);
+    $cidadao->setNis($nis);
 
     //chamo a função da DAO, que efetivamente manipula o BD
-    $dao->adicionarCidadao($Cidadao);
+    $dao->adicionarCidadao($cidadao);
 }
 
 function editarCidadao() {
@@ -58,7 +58,7 @@ function editarCidadao() {
     //instancia das classes
     $db = new Database();
     $dao = new DaoCidadao();
-    $Cidadao = new ModelCidadao();
+    $cidadao = new ModelCidadao();
 
     //campos a serem recebidos da view
     $id = $_POST['id'];
@@ -66,12 +66,12 @@ function editarCidadao() {
     $nis = $_POST['nis'];
 
     //adiciono os elementos em um objeto Cidadao
-    $Cidadao->setId($id);
-    $Cidadao->setNome($nome);
-    $Cidadao->setNis($nis);
+    $cidadao->setId($id);
+    $cidadao->setNome($nome);
+    $cidadao->setNis($nis);
 
     //chamo a função da DAO, que efetivamente manipula o BD
-    $dao->editarCidadao($Cidadao);
+    $dao->editarCidadao($cidadao);
 }
 
 function excluirCidadao() {
@@ -83,14 +83,14 @@ function excluirCidadao() {
     //instancia das classes
     $db = new Database();
     $dao = new DaoCidadao();
-    $Cidadao = new ModelCidadao();
+    $cidadao = new ModelCidadao();
 
     //id do usuário a ser deletado
     $id = $_POST['id'];
 
-    $Cidadao = new ModelCidadao();
-    $Cidadao->setId($id);
+    $cidadao = new ModelCidadao();
+    $cidadao->setId($id);
     
     //chamo a função da DAO, que efetivamente manipula o BD
-    $dao->excluirCidadao($Cidadao);
+    $dao->excluirCidadao($cidadao);
 }

@@ -28,11 +28,11 @@ class DaoCidadao {
         return $stmt;
     }
 
-    public function adicionarCidadao(ModelCidadao $Cidadao) {
+    public function adicionarCidadao(ModelCidadao $cidadao) {
         try {
             //recupero valores do Model
-            $nome = $Cidadao->getNome();
-            $nis = $Cidadao->getNis();
+            $nome = $cidadao->getNome();
+            $nis = $cidadao->getNis();
 
             //preparo o comando
             $stmt = $this->conn->prepare("INSERT INTO Cidadao(nomeCidadao, nisCidadao) VALUES(?, ?)");
@@ -55,12 +55,12 @@ class DaoCidadao {
         }
     }
 
-    public function editarCidadao(ModelCidadao $Cidadao) {
+    public function editarCidadao(ModelCidadao $cidadao) {
         try {
             //recupero valores do Model
-            $id = $Cidadao->getId();
-            $nome = $Cidadao->getNome();
-            $nis = $Cidadao->getNis();
+            $id = $cidadao->getId();
+            $nome = $cidadao->getNome();
+            $nis = $cidadao->getNis();
 
             //preparo o comando
             $stmt = $this->conn->prepare("UPDATE Cidadao SET nomeCidadao = ?, nisCidadao = ? WHERE idCidadao = ?");
@@ -84,10 +84,10 @@ class DaoCidadao {
         }
     }
 
-    public function excluirCidadao(ModelCidadao $Cidadao) {
+    public function excluirCidadao(ModelCidadao $cidadao) {
         try {
             //recupero valores do Model
-            $id = $Cidadao->getId();
+            $id = $cidadao->getId();
 
             //preparo o comando
             $stmt = $this->conn->prepare("DELETE FROM Cidadao WHERE idCidadao = ?");
