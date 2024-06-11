@@ -63,7 +63,7 @@ function editarMembro() {
     //campos a serem recebidos da view
     $id = $_POST['id'];
     $nome = $_POST['nome'];
-    $cpf = $_POST['nis'];
+    $nis = $_POST['nis'];
 
     //adiciono os elementos em um objeto Membro
     $membro->setId($id);
