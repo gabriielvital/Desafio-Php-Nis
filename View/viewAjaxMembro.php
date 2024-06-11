@@ -37,11 +37,9 @@ while ($rowMembros = $stmtMembros->fetch(PDO::FETCH_ASSOC)) {
 
     $data[$i]{'idMembro'} = $rowMembros['idMembro'];
     $data[$i]{'nomeMembro'} = $rowMembros['nomeMembro'];
-    $data[$i]{'usuarioMembro'} = $rowMembros['usuarioMembro'];
-    $data[$i]{'cpfMembro'} = $rowMembros['cpfMembro'];
-    $data[$i]{'senhaMembro'} = $rowMembros['senhaMembro'];
+    $data[$i]{'nisMembro'} = $rowMembros['nisMembro'];
     $data[$i]{'button'} = '
-              <a id="rowEditarMembro_' . $i . '" data-id="' . $rowMembros['idMembro'] . '" data-nome="' . $rowMembros['nomeMembro'] . '"data-cpf="' . $rowMembros['cpfMembro'] . '"data-usuario="' . $rowMembros['usuarioMembro'] . '"data-senha="' . $rowMembros['senhaMembro'] . '" onclick="editarMembro(' . ($i + 1) . ')" data-tooltip="tooltip" title="Editar Membro"><span class="mdi mdi-account-key"></span> Editar</a></li>
+              <a id="rowEditarMembro_' . $i . '" data-id="' . $rowMembros['idMembro'] . '" data-nome="' . $rowMembros['nomeMembro'] . '"data-nis="' . $rowMembros['nisMembro'] . '" onclick="editarMembro(' . ($i + 1) . ')" data-tooltip="tooltip" title="Editar Membro"><span class="mdi mdi-account-key"></span> Editar</a></li>
               <a id="rowDeleteMembro_' . $i . '" data-id="' . $rowMembros['idMembro'] . '" data-nome="' . $rowMembros['nomeMembro'] . '" onclick="excluirMembro(' . ($i + 1) . ')" data-tooltip="tooltip" title="Excluir"><span class="mdi mdi-delete-forever"></span> Excluir</a></li>
            ';
 

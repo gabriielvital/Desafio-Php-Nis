@@ -26,9 +26,7 @@
                             <thead>
                                 <tr>
                                     <th>Nome</th>
-                                    <th>CPF</th>
-                                    <th>Usuario</th>
-                                    <th>Senha</th>
+                                    <th>NIS</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -67,30 +65,9 @@
                                 <div class="row">
                                     <div class="col-md-12 col-md-offset-1">
                                         <div class="form-group">
-                                            <label class="col-lg-12 control-label">CPF</label>
+                                            <label class="col-lg-12 control-label">NIS</label>
                                             <div class="col-lg-12">
-                                                <input class="form-control" type="text" id="cpfE" name="cpf" placeholder="" required autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-md-offset-1">
-                                        <div class="form-group">
-                                            <label class="col-lg-12 control-label">Usuario</label>
-                                            <div class="col-lg-12">
-                                                <input class="form-control" type="text" id="usuarioE" name="usuario" placeholder="" required autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12 col-md-offset-1">
-                                        <div class="form-group">
-                                            <label class="col-lg-12 control-label">Senha</label>
-                                            <div class="col-lg-12">
-                                                <input class="form-control" type="text" id="senhaE" name="senha" placeholder="" required autocomplete="off">
+                                                <input class="form-control" type="text" id="nisE" name="nis" placeholder="" required autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -131,30 +108,9 @@
                                 <div class="row">
                                     <div class="col-md-12 col-md-offset-1">
                                         <div class="form-group">
-                                            <label class="col-lg-12 control-label">CPF</label>
+                                            <label class="col-lg-12 control-label">NIS</label>
                                             <div class="col-lg-12">
-                                                <input class="form-control" type="text" id="cpf" name="cpf" placeholder="" required autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-md-offset-1">
-                                        <div class="form-group">
-                                            <label class="col-lg-12 control-label">Usuario</label>
-                                            <div class="col-lg-12">
-                                                <input class="form-control" type="text" id="usuario" name="usuario" placeholder="" required autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12 col-md-offset-1">
-                                        <div class="form-group">
-                                            <label class="col-lg-12 control-label">Senha</label>
-                                            <div class="col-lg-12">
-                                                <input class="form-control" type="text" id="senha" name="senha" placeholder="" required autocomplete="off">
+                                                <input class="form-control" type="text" id="nis" name="nis" placeholder="" required autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +145,7 @@
                     $('#sampleTable').DataTable({
                         "columnDefs": [
                             {
-                                targets: [0, 1, 2, 3, 4]
+                                targets: [0, 1, 2]
                             }
                         ],
                         "ajax": {
@@ -198,9 +154,7 @@
                         },
                         "columns": [
                             {"data": "nomeMembro"},
-                            {"data": "cpfMembro"},
-                            {"data": "usuarioMembro"},
-                            {"data": "senhaMembro"},
+                            {"data": "nisMembro"},
                             {"data": "button"}
                         ],
                         "order": [[0, 'asc']],
