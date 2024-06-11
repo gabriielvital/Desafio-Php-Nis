@@ -9,7 +9,7 @@
 /**
  * Description of ControllerMembro
  *
- * @author Thiago
+ *
  */
 //ação recebida da view
 $acao = $_POST["acao"];
@@ -39,15 +39,11 @@ function adicionarMembro() {
 
     //campos a serem recebidos da view
     $nome = $_POST['nome'];
-    $cpf = $_POST['cpf'];
-    $usuario = $_POST['usuario'];
-    $senha = $_POST['senha'];
+    $nis = $_POST['nis'];
 
     //adiciono os elementos em um objeto Membro
     $membro->setNome($nome);
-    $membro->setCpf($cpf);
-    $membro->setUsuario($usuario);
-    $membro->setSenha($senha);
+    $membro->setNis($nis);
 
     //chamo a função da DAO, que efetivamente manipula o BD
     $dao->adicionarMembro($membro);
@@ -67,16 +63,12 @@ function editarMembro() {
     //campos a serem recebidos da view
     $id = $_POST['id'];
     $nome = $_POST['nome'];
-    $cpf = $_POST['cpf'];
-    $usuario = $_POST['usuario'];
-    $senha = $_POST['senha'];
+    $cpf = $_POST['nis'];
 
     //adiciono os elementos em um objeto Membro
     $membro->setId($id);
     $membro->setNome($nome);
-    $membro->setCpf($cpf);
-    $membro->setUsuario($usuario);
-    $membro->setSenha($senha);
+    $membro->setNis($nis);
 
     //chamo a função da DAO, que efetivamente manipula o BD
     $dao->editarMembro($membro);
