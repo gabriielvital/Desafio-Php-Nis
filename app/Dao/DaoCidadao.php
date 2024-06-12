@@ -69,9 +69,10 @@ class DaoCidadao {
 
             //verifico se deu certo
             if ($stmt->rowCount() > 0) {
-                echo 1;
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $result;
             } else {
-                echo 2;
+                return null;
             }
         } catch (PDOException $e) {
             echo $e->getMessage();

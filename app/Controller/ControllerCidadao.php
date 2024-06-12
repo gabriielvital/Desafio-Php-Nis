@@ -63,6 +63,13 @@ function pesquisarCidadao() {
     $cidadao = new ModelCidadao();
     $cidadao->setNis($nis);
     
-    //chamo a função da DAO, que efetivamente manipula o BD
-    return $dao->pesquisarCidadao($cidadao);
+    //função da DAO, que efetivamente manipula o BD
+    $result = $dao->pesquisarCidadao($cidadao);
+
+    if ($result) {
+        echo json_encode(['status' => 'success', 'data' => $result]);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Usuário não encontrado']);
+    }
+    
 }

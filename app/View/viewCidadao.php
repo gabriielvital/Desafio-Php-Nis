@@ -13,21 +13,17 @@
 
         <div class="row">
             <div class="col">
-                <button id="btnModalCadCidadao" class="btn btn-primary" type="submit">Novo Cidadao</button>
-            </div>
-            <div class="col">
-                <button id="btnModalPesquisarNIS" class="btn btn-primary" type="submit">Pesquisar Cidadao pelo NIS</button>
+                <button id="btnModalCadCidadao" class="btn btn-primary" type="submit">Novo cidadao</button>
+                <button id="btnModalPesCidadao" class="btn btn-primary" type="submit">Pesquisar cidadao pelo NIS</button>
             </div>
         </div>
-
-
             <!-- -->
             <div id="cadastrarCidadao" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="nome-Cidadao"></h4>
+                            <h4 class="modal-title" id="nome-cidadao"></h4>
                             <button type="button" class="close" data-dismiss="modal" >&times;</button>
                         </div>
                         <div class="modal-body">
@@ -64,17 +60,18 @@
             </div>
 
 
-            <!-- Modal de Pesquisar Cidadão pelo NIS -->
+
+            <!-- -->
             <div id="pesquisarCidadao" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="nome-Cidadao"></h4>
+                            <h4 class="modal-title" id="nome-cidadao"></h4>
                             <button type="button" class="close" data-dismiss="modal" >&times;</button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal" id="pesquisarCidadao-form" method="POST">
+                            <form class="form-horizontal" id="pesCidadao-form" method="POST">
                                 <input type="hidden" name="acao" value="pesquisar">
                                 <div class="row">
                                     <div class="col-md-12 col-md-offset-1">
@@ -88,7 +85,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button id="btnPesquisarNIS" class="btn btn-primary" type="submit">Pesquisar</button>
+                                    <button id="btnPesCidadao" class="btn btn-primary" type="submit">Pesquisar</button>
                                 </div>
                             </form>
                         </div>
@@ -96,11 +93,12 @@
                 </div>
             </div>
 
+
             <!-- JQuery -->
             <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>        <!-- Bootstrap core JavaScript -->
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
             <!-- Custom js -->
-            <script src="../Assets/js/custom/cidadaos.js"></script>
+            <script src="../assets/js/custom/cidadaos.js"></script>
             <!-- Sweet alert js -->
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
             <!-- bibliotecas do dtable -->
