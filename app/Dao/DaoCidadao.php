@@ -55,45 +55,16 @@ class DaoCidadao {
         }
     }
 
-    public function editarCidadao(ModelCidadao $cidadao) {
+    public function pesquisarCidadao(ModelCidadao $cidadao) {
         try {
             //recupero valores do Model
-            $id = $cidadao->getId();
-            $nome = $cidadao->getNome();
             $nis = $cidadao->getNis();
 
             //preparo o comando
-            $stmt = $this->conn->prepare("UPDATE Cidadao SET nomeCidadao = ?, nisCidadao = ? WHERE idCidadao = ?");
+            $stmt = $this->conn->prepare("SELECT * FROM Cidadao WHERE nisCidadao = ?");
 
             //bind nos valores dos campos
-            $stmt->bindparam(1, $nome);
-            $stmt->bindparam(2, $nis);
-            $stmt->bindparam(3, $id);
-
-            //executo a instrução
-            $stmt->execute();
-
-            //verifico se deu certo
-            if ($stmt->rowCount() > 0) {
-                echo 1;
-            } else {
-                echo 2;
-            }
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
-
-    public function excluirCidadao(ModelCidadao $cidadao) {
-        try {
-            //recupero valores do Model
-            $id = $cidadao->getId();
-
-            //preparo o comando
-            $stmt = $this->conn->prepare("DELETE FROM Cidadao WHERE idCidadao = ?");
-
-            //bind nos valores dos campos
-            $stmt->bindparam(1, $id);
+            $stmt->bindparam(1, $nis);
             $stmt->execute();
 
             //verifico se deu certo

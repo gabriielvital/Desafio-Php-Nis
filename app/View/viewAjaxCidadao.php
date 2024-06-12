@@ -3,8 +3,22 @@
 require_once ('../Dao/DaoCidadao.php');
 $cidadaosDao = new DaoCidadao();
 
-function mask($val, $mask) {
+if (isset($_POST['nisPesquisa'])) {
+    $nisPesquisa = $_POST['nisPesquisa'];
+    $stmtCidadao = $cidadaosDao->runQuery("SELECT * FROM Cidadao WHERE nisCidadao = :nis");
+    $stmtCidadao->bindParam(':nis', $nisPesquisa);
+    $stmtCidadao->execute();
+    $cidadao = $stmtCidadao->fetch(PDO::FETCH_ASSOC);
 
+    if ($cidadao) {
+        echo json_encode($cidadao);
+    } else {
+        echo json_encode([]);
+    }
+    exit();
+}
+
+function mask($val, $mask) {
     $maskared = '';
     $k = 0;
 
@@ -34,14 +48,11 @@ $data = array();
 $i = 0;
 // Mostrar tabela...
 while ($rowCidadaos = $stmtCidadaos->fetch(PDO::FETCH_ASSOC)) {
-
-    $data[$i]{'idCidadao'} = $rowCidadaos['idCidadao'];
-    $data[$i]{'nomeCidadao'} = $rowCidadaos['nomeCidadao'];
-    $data[$i]{'nisCidadao'} = $rowCidadaos['nisCidadao'];
+    $data[$i]['idCidadao'] = $rowCidadaos['idCidadao'];
+    $data[$i]['nomeCidadao'] = $rowCidadaos['nomeCidadao'];
+    $data[$i]['nisCidadao'] = $rowCidadaos['nisCidadao'];
     $i++;
 }
-
-
 
 $datax = array('data' => $data);
 
