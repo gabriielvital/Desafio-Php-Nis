@@ -21,6 +21,17 @@ https://github.com/gabriielvital/Desafio-Php-Nis
 </p>
 
 ## Description
+```
+NIS-> Composto por 11 Digitos
+
+Criar aplicação -> Unico campo para informar o nome do cidadão. Assim, ao cadastrar um número NIS deve ser gerado e atribuido à pessoa.
+                -> Unico campo para informar o nis. Assim, ao pesquisar o nis informado, deve ser exibido um cidadão caso exista, se não, "Cidadão não encontrado"
+
+->Padrões arquiteturiais e de projeto
+->Testes Automatizados
+->Gerenciador de Pacotes
+```
+
 <h4>Dependencias / Tecnologias</h4>
 
 ```
