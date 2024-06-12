@@ -1,5 +1,5 @@
 # DesafioNIS
-Desafio em PHP utilizando REST
+Desafio em PHP
 https://github.com/gabriielvital/Desafio-Php-Nis
 
 ## Goals 
