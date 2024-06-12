@@ -1,9 +1,17 @@
 <?php
+
+require_once('../Classes/GenerateNis.php');
     class ModelCidadao {
 
         private $id;
         private $nome;
         private $nis;
+
+
+        function __construct() {
+            $generateNis = new GenerateNis();
+            $this-> nis = $generateNis->generate();
+        }
 
         function getId() {
             return $this->id;

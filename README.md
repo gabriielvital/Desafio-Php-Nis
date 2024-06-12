@@ -2,7 +2,7 @@
   ## Goals 
 <p>
   <br> [ ] Injeção de Dependencias
-  <br> [ DONE ] Padrão Valid
+  <br> [ ] Padrão Valid
   <br> [ ] Interfaces
   <br> [ ] Padrão Single Function
   <br> [ ] Integração por ORM
