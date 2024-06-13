@@ -1,10 +1,10 @@
 # DesafioNIS
 Desafio em PHP<br>
-https://github.com/gabriielvital/Desafio-Php-Nis
-
-Existe duas Branchs:
-a branch Main com o código monolitico, com arquitetura MVC e conexão com Banco de Dados em PDO, já pronto.
-a branch API Version, onde eu estou passando esse código para uma API, e assim colocar posteriormente Dessign Patterns, Testes, etc . 
+https://github.com/gabriielvital/Desafio-Php-Nis<br>
+<br>
+Existe duas Branchs:<br>
+a branch Main com o código monolitico, com arquitetura MVC e conexão com Banco de Dados em PDO, já pronto.<br>
+a branch API Version, onde eu estou passando esse código para uma API, e assim colocar posteriormente Dessign Patterns, Testes, etc . <br>
 Não fiz uma API de começo porque não tinha feito API em PHP, então resolvi fazer já codar do jeito que eu já sabia em PHP, posteriormente estudando e aplicando conceitos que eu já conheço de outras linguagens nessa versão API.
 
 ## Goals 
