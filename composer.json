@@ -1,17 +1,12 @@
 {
-    "name": "gabri/desafio-php-nis",
-    "type": "project",
     "autoload": {
-        "psr-4": {
-            "Gabri\\DesafioPhpNis\\": "src/"
+        "psr-4":{
+            "app\\":"app",
+            "core\\":"core"
         }
     },
-    "authors": [
-        {
-            "name": "Gabriel"
-        }
-    ],
-    "require-dev": {
-        "phpunit/phpunit": "*"
+    "require":{
+        "twig/twig": "^3.10",
+        "twig/extensions": "^1.5"
     }
 }
