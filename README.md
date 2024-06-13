@@ -2,6 +2,11 @@
 Desafio em PHP<br>
 https://github.com/gabriielvital/Desafio-Php-Nis
 
+Existe duas Branchs:
+a branch Main com o código monolitico, com arquitetura MVC e conexão com Banco de Dados em PDO, já pronto.
+a branch API Version, onde eu estou passando esse código para uma API, e assim colocar posteriormente Dessign Patterns, Testes, etc . 
+Não fiz uma API de começo porque não tinha feito API em PHP, então resolvi fazer já codar do jeito que eu já sabia em PHP, posteriormente estudando e aplicando conceitos que eu já conheço de outras linguagens nessa versão API.
+
 ## Goals 
 <p>
   <br> [ DONE ] Front End Adicionar Cidadão
@@ -46,4 +51,9 @@ HMTL5
 
 ## How to Start
 
-Instale o Xampp ou Wampp(Ou algum servidor Apache com suporte a linguagens PHP, e um banco de dados MYSql) e cole o conteudo na pasta referente ao htdocs, e importe o squema SQL em Docs/Modelagem.sql no seu servidor MYSql(Lembre-se de verificar se a conexão em App/Database/Database.php está configurado com seu servidor SQL)
+- Suba um servidor apache php na pasta que você extraiu os arquivos, eu utilizei esse comando
+```
+php -S localhost:8888 -t public
+```
+
+- Importe o squema SQL em Docs/Modelagem.sql no seu servidor MYSQL(Lembre-se de verificar se a conexão em App/Database/Database.php está configurado com seu servidor MYSQL)
